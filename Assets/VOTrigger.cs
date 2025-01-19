@@ -2,17 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class lookAt : MonoBehaviour
+public class VOscript : MonoBehaviour
 {
+    public AudioSource Audiosource ;
 
-  public Transform Target1;
-
-
-
+    public AudioClip Audioclip;
 
 
 
 
+
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Audiosource.clip = Audioclip;
+
+        Audiosource.Play();
+
+
+    }
 
 
 
@@ -24,18 +33,18 @@ public class lookAt : MonoBehaviour
 
 
 
+
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        // Rotate the camera every frame so it keeps looking at the target
-        transform.LookAt(Target1);
-
-
-
-
-
+      
+ 
+        
     }
 }
+
+
